@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8336cb60-fc97-4e68-a161-5dadfeeb9b5e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jUTKWDN1GjmgDkG1Bs1l8ezLa5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/data/database" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/data/database" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/data/memory" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest in /">
+    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_database_repository.test_repository_can_add_a_user" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_database_repository.test_repository_can_add_a_user&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_orm.test_loading_of_users" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_orm.test_loading_of_users&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_orm.test_saving_of_review" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_orm.test_saving_of_review&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_orm.test_saving_of_users" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_orm.test_saving_of_users&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in /" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="CS235FlixA3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.pytest in /" />
+      <item itemvalue="Python tests.pytest for test_orm.test_saving_of_users" />
+      <item itemvalue="Python tests.pytest for test_orm.test_loading_of_users" />
+      <item itemvalue="Python tests.pytest for test_orm.test_saving_of_review" />
+      <item itemvalue="Python tests.pytest for test_database_repository.test_repository_can_add_a_user" />
+      <item itemvalue="Python.wsgi" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python tests.pytest for test_database_repository.test_repository_can_add_a_user" />
+        <item itemvalue="Python tests.pytest for test_orm.test_saving_of_review" />
+        <item itemvalue="Python tests.pytest for test_orm.test_loading_of_users" />
+        <item itemvalue="Python tests.pytest for test_orm.test_saving_of_users" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8336cb60-fc97-4e68-a161-5dadfeeb9b5e" name="Default Changelist" comment="" />
+      <created>1603857606713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603857606713</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="96" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603857952863">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="184" y="96" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.823@0.23.1440.823" timestamp="1603857952863" />
+    <state x="464" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603953320386">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="464" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.823@0.23.1440.823" timestamp="1603953320386" />
+    <state x="533" y="157" key="#com.intellij.ide.util.MemberChooser" timestamp="1603955738204">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="533" y="157" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1603955738204" />
+    <state width="1419" height="264" key="GridCell.Tab.0.bottom" timestamp="1604047797297">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1604047797297" />
+    <state width="1419" height="264" key="GridCell.Tab.0.center" timestamp="1604047797296">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1604047797296" />
+    <state width="1419" height="264" key="GridCell.Tab.0.left" timestamp="1604047797296">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1604047797296" />
+    <state width="1419" height="264" key="GridCell.Tab.0.right" timestamp="1604047797297">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1604047797297" />
+    <state width="1419" height="264" key="GridCell.Tab.1.bottom" timestamp="1604047797299">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.1.bottom/0.23.1440.823@0.23.1440.823" timestamp="1604047797299" />
+    <state width="1419" height="264" key="GridCell.Tab.1.center" timestamp="1604047797298">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.1.center/0.23.1440.823@0.23.1440.823" timestamp="1604047797298" />
+    <state width="1419" height="264" key="GridCell.Tab.1.left" timestamp="1604047797298">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.1.left/0.23.1440.823@0.23.1440.823" timestamp="1604047797298" />
+    <state width="1419" height="264" key="GridCell.Tab.1.right" timestamp="1604047797298">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.1.right/0.23.1440.823@0.23.1440.823" timestamp="1604047797298" />
+    <state x="116" y="74" key="SettingsEditor" timestamp="1604023466309">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="116" y="74" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1604023466309" />
+    <state x="385" y="170" width="670" height="676" key="search.everywhere.popup" timestamp="1604044291964">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="385" y="170" width="670" height="676" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1604044291964" />
+  </component>
+</project>

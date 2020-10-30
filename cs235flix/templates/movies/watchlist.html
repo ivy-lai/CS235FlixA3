@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .button {
+  background-color: #333;
+  color: white;
+  font-size:12px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1> Movie has been {{title}} Watchlist</h1>
+<img  src="{{ url_for('static', filename='watchlist.png') }}" />
+<button style="margin-left:40%" class="button" onclick="goBack()"> Back to Movie </button>
+<button class="button" > <a style="color:white; text-decoration:none;" href= "{{ url_for('movies_bp.view_watchlist') }}"> View Watchlist</a> </button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+
+</body>
+{% endblock %}

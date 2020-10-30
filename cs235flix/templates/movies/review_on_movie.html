@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+<main id="main">
+
+        <h1>{{movie.title}}</h1>
+
+        <div style="clear:both">
+        <h3>Rate and Review</h3>
+            <div class="form-wrapper">
+            <form method="POST" action={{handler_url}}>
+<!--            <form action="" method="post">-->
+                {{form.movie_id}} <!-- Need to include this hidden field as it tracks the article being commented. -->
+                {{form.csrf_token}} <!-- Need to include this token - Flask WTForms requires it. -->
+                <br>
+
+                  <div class="rating">
+                      <h4> {{form.rating.label}} <span style="color: red;"> *</span></h4>
+                      <select id="rating" name="rating" style="max-width : 450px;" class="form-control">
+                          <option>1 Star</option>
+                          <option>2 Stars</option>
+                          <option>3 Stars</option>
+                          <option>4 Stars</option>
+                          <option>5 Stars</option>
+                          <option>6 Stars</option>
+                          <option>7 Stars</option>
+                          <option>8 Stars</option>
+                          <option>9 Stars</option>
+                          <option>10 Stars</option>
+                      </select>
+                      {% if form.rating.errors %}
+        	            {% for error in form.rating.errors %}
+                      <br><br><b>{{error}}</b>
+                        {% endfor %}
+                    {% endif %}
+                      </div>
+                <div class ="form-field">
+                    <h4> Comments <span style="color: red;"> *</span></h4>
+                    {{form.comment(size = 100, placeholder="type your comment", class="textarea", cols="50", rows="6", wrap="hard")}}
+                    {% if form.comment.errors %}
+        	            {% for error in form.comment.errors %}
+                    <br><b>{{error}}</b>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <br><br>
+                <button onclick="goBack()">Cancel</button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+                {{ form.submit }}
+            </form>
+        </div>
+        <div style="clear:both">
+            {% for review in movie.reviews %}
+                <p>{{review.comment_text}}, by {{review.username}}, {{review.timestamp}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

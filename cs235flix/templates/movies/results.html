@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search results</title>
+</head>
+
+<body>
+
+    {% if results == [] %}
+    <h2 style="text-align:center;"> No results found </h2>
+    <img src="{{ url_for('static', filename='No_Results.jpg') }}" />
+    <h4 style="text-align:center;"> Try different key word</h4>
+
+{%else%}
+    <h1> Search Results </h1>
+    <table style="border: 1px solid black;" id="table">
+        <tr style="border: 1px solid black;">
+            <th style="border: 1px solid black;"> Title </th>
+            <th style="border: 1px solid black;"> Description</th>
+            <th style="border: 1px solid black;"> Release Year</th>
+            <th style="border: 1px solid black;"> Genres </th>
+            <th style="border: 1px solid black;"> Actors </th>
+            <th style="border: 1px solid black;"> Director </th>
+            <th style="border: 1px solid black;"> Runtime (Mins) </th>
+            <th style="border: 1px solid black;"> Rating </th>
+        </tr>
+
+        {% for movie in results %}
+        <tr style="border: 1px solid black;">
+       <td style="border: 1px solid black;"><a href="{{ (movie['url']) }}"> {{movie.title}}<br></a></td>
+            <td style="border: 1px solid black;"> {{movie.description}}</td>
+            <td style="border: 1px solid black;"> {{movie.year}}</td>
+            <td style="border: 1px solid black;"> {% for genre in movie.genres %}
+            {{ genre.name }}
+            {% endfor %}</td>
+            <td style="border: 1px solid black;"> {% for actor in movie.actors %}
+            {{ actor.name }},
+            {% endfor %}</td>
+            <td style="border: 1px solid black;"> {{movie.director.name}} </td>
+            <td style="border: 1px solid black;"> {{movie.runtime}}</td>
+            <td style="border: 1px solid black;"> {{movie.ratings}}</td>
+        </tr>
+
+    {% endfor %}
+    </table>
+    {% endif %}
+</body>
+
+{% endblock %}

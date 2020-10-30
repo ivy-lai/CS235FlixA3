@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .table, .th, .td {
+      border: 1px solid black;
+      color: black;
+      margin-left:auto; margin-right:auto;
+    }
+    .checked{
+    color: orange
+    }
+    .button {
+  background-color: #333;
+  color: white;
+  font-size:12px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+<main id="main">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h1> {{ movie.title}}, {{movie.year}} </h1>
+    <button style="margin-right:7px;float:left;" class="button" onclick="goBack()"> Back</button>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <button style="margin-left:7px;float:right;" class="button" onclick="location.href='{{ movie.add_review_url }}'"> Write a Review </button>
+    {% if watchlist == [] %}
+    <button style="float:right;" class="button" onclick="location.href='{{ movie.add_watchlist_url }}'"> Add to Watchlist </button>
+    {% else %}
+    {% if watch == 0 %}
+    <button style="float:right;" class="button" onclick="location.href='{{ movie.add_watchlist_url }}'"> Add to Watchlist </button>
+    {% else %}
+    <button style="float:right;" class="button" onclick="location.href='{{ movie.delete_watchlist_url }}'"> Remove from Watchlist </button>
+    {% endif %}
+    {% endif %}
+
+
+    <br><br><br>
+    <b> Description: </b> <br>
+<a>{{movie['description']}} </a><br><br>
+
+<b> Rating: </b><br>
+<a> {{movie.ratings}} </a> <br><br>
+
+<b> Genres: </b><br>
+{% for genre in movie.genres %}
+<a> {{ genre.name }} </a> <br>
+    {% endfor%} <br>
+
+<b> Director: </b> <br>
+<a> {{ movie.director.name }} </a> <br><br>
+
+<b> Actors: </b>
+<br>
+{% for actor in movie.actors %}
+<a> {{ actor.name }} </a> <br>
+    {% endfor%} <br>
+
+<b> Reviews: </b> <br>
+{% if movie.reviews == [] %}
+    <a> No Reviews To Display</a>
+{%else%}
+    {% for review in movie.reviews %}
+    {%if review.rating == 1%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 2%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 3%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 4%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 5%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 6%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 7%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 8%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 9%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+    {% endif %}
+
+    {%if review.rating == 10%}
+    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+    {% endif %}
+
+    <br>
+    <a> " </a>
+<a style="font-style:italic"> {{ review.review_text }} </a> <a> " </a><br>
+    <a style="margin-left: 10%"> - {{review.username}}</a> <br>
+    <a style="margin-left: 10%"> {{review.timestamp.strftime('%Y-%m-%d')}}</a><br><br>
+{% endfor%}
+{%endif%}
+    <br> <br>
+    </body>
+<br>
+
+</main>
+{% endblock %}

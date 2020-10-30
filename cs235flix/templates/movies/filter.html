@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+    .table, .th, .td {
+      border: 1px solid black;
+      color: black;
+      margin-left:auto; margin-right:auto;
+    }
+    .button {
+  background-color: #333;
+  color: white;
+  font-size:12px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+
+<filter id="filter">
+    {% if filter is none %}
+    <h1> Choose {{type}} To Filter Movies By: </h1>
+
+    {% for item in urls %}
+        <a style="color:black; font-size: 18px;" href="{{urls[item]}}">{{item.name}}<br>
+        </a>
+    {% endfor %}
+
+    {% else %}
+    <br>
+    <button class="button" onclick="goBack()">Go Back To All {{type}}</button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+
+    <h1> Movies filtered by: {{filter}}</h1>
+    <table style="border: 1px solid black;" id="table">
+        <tr style="border: 1px solid black;">
+            <th style="border: 1px solid black;"> Title </th>
+            <th style="border: 1px solid black;"> Description</th>
+            <th style="border: 1px solid black;"> Release Year</th>
+            <th style="border: 1px solid black;"> Genres </th>
+            <th style="border: 1px solid black;"> Actors </th>
+            <th style="border: 1px solid black;"> Director </th>
+            <th style="border: 1px solid black;"> Runtime (Mins) </th>
+            <th style="border: 1px solid black;"> Rating </th>
+        </tr>
+
+        {% for movie in movie_list %}
+        <tr style="border: 1px solid black;">
+       <td style="border: 1px solid black;"><a href="{{ (movie['url']) }}"> {{movie.title}}<br></a></td>
+            <td style="border: 1px solid black;"> {{movie.description}}</td>
+            <td style="border: 1px solid black;"> {{movie.year}}</td>
+            <td style="border: 1px solid black;"> {% for genre in movie.genres %}
+            {{ genre.name }}
+            {% endfor %}</td>
+            <td style="border: 1px solid black;"> {% for actor in movie.actors %}
+            {{ actor.name }},
+            {% endfor %}</td>
+            <td style="border: 1px solid black;"> {{movie.director.name}} </td>
+            <td style="border: 1px solid black;"> {{movie.runtime}}</td>
+            <td style="border: 1px solid black;"> {{movie.ratings}}</td>
+        </tr>
+
+    {% endfor %}
+    </table>
+    {% endif %}
+
+
+</filter>
+{% endblock %}

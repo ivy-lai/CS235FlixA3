@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+<main id="main">
+    <head>
+        <style>
+table, th, tr, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<h1> Watchlist </h1>
+{% if watchlist == [] %}
+<img src="{{ url_for('static', filename='blank.png') }}" />
+<h3 style="text-align: center;"> Watchlist is currently empty </h3>
+<p style="text-align: center;"> Add some movies to you Watchlist! </p>
+{% else %}
+<table style="border: 1px solid black;" id="table">
+        <tr style="border: 1px solid black;">
+            <th> Title </th>
+            <th> Description</th>
+            <th> Release Year</th>
+            <th> Genres </th>
+            <th> Actors </th>
+            <th> Director </th>
+            <th> Runtime (Mins) </th>
+            <th> Rating </th>
+        </tr>
+
+        {% for movie in watchlist %}
+        <tr style="border: 1px solid black;">
+       <td style="border: 1px solid black;"><a href="{{ (movie['url']) }}"> {{movie.title}}<br></a></td>
+            <td> {{movie.description}}</td>
+            <td> {{movie.year}}</td>
+            <td> {% for genre in movie.genres %}
+            {{ genre.name }}
+            {% endfor %}</td>
+            <td> {% for actor in movie.actors %}
+            {{ actor.name }},
+            {% endfor %}</td>
+            <td> {{movie.director.name}} </td>
+            <td> {{movie.runtime}}</td>
+            <td> {{movie.ratings}}</td>
+<!--            <td> <input type="button" value="Delete" onclick="deleteRow(this)"></td>-->
+        </tr>
+
+    {% endfor %}
+    </table>
+{% endif %}
+
+<script>
+    function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("table").deleteRow(i);
+}
+    </script>
+</body>
+</main>
+{% endblock %}

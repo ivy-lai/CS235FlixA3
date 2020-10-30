@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CS235Flix</title>
+
+  <link
+      rel="stylesheet"
+      href="/static/css/main.css"
+    />
+  </head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+  <div id="body">
+      <!-- Include navigation partial. -->
+      {% include 'nav.html' %}
+      <div id="container" >
+        <!-- Main content block to be supplied by page. -->
+        {% block content %} {% endblock %}
+      </div>
+  </div>
+    </div>
+    </body>
+</html>

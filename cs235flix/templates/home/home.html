@@ -1,0 +1,80 @@
+{% extends 'layout.html' %} {% block content %}
+
+<main id="main">
+<head>
+    <style>
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #333;
+  padding: 10px;
+}
+
+.grid-item {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+</style>
+</head>
+<body>
+    <p>
+        This web page will allow you to browse through a variety of movies, search for a specific movie and leave reviews.
+        <br>
+        When browsing through all the movies available, they may be filtered based on you favourite genre, actor or director.
+        <br>
+        If you choose to make an account, you may also add and remove movies to and from your watchlist.
+    </p>
+<br>
+<h2 style="text-align: center"> Top Rated Movies </h2>
+<br>
+
+    <div class="grid-container">
+        <div class="grid-item"> <img src="{{ url_for('static', filename='Dark_Knight.jpg') }}" /> </div>
+        <div class="grid-item"> <img src="{{ url_for('static', filename='Inception_Poster.jpg') }}" /> </div>
+        <div class="grid-item"> <img src="{{ url_for('static', filename='Dangal_Poster.jpg') }}" /> </div>
+        <div class="grid-item"><b>{{dark_knight.title}}, {{dark_knight.year}}</b> <br>
+            <p style="font-style:italic;"> Starring:<p>
+            {% for actor in dark_knight.actors %}
+            {{actor.name}}<br>
+            {%endfor%}<br>
+            Rating: {{dark_knight.ratings}}
+                <br><br>
+            <a href="/movie_by_id?id=55" class="button">See more</a>
+        </div>
+        <div class="grid-item"><b>{{inception.title}}, {{inception.year}}</b> <br>
+            <p style="font-style:italic;"> Starring:<p>
+            {% for actor in inception.actors %}
+            {{actor.name}}<br>
+            {%endfor%}<br>
+            Rating: {{inception.ratings}}
+        <br><br>
+            <a href="/movie_by_id?id=81" class="button">See more</a>
+        </div>
+        <div class="grid-item">{{dangal.title}}, {{dangal.year}}</b> <br>
+            <p style="font-style:italic;"> Starring:<p>
+            {% for actor in dangal.actors %}
+            {{actor.name}}<br>
+            {%endfor%}<br>
+            Rating: {{dangal.ratings}}
+        <br><br>
+            <a href="/movie_by_id?id=118" class="button">See more</a>
+        </div>
+
+</div>
+
+</body>
+</main>
+{% endblock %}

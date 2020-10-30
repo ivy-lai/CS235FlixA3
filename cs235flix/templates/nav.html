@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+ri {
+  float: right;
+}
+
+li a, ri a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li a:hover,ri a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+<!--Search Bar-->
+.ul input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.ul .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.ul .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .ul .search-container {
+    float: left;
+  }
+  .ul a, .ul input[type=text], .ul .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .ul input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+  </style>
+</head>
+
+<body>
+{% if 'username' in session %}
+
+<ul>
+  <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
+
+  <li class="dropdown" style="float:left;">
+    <a href="javascript:void(0)" class="dropbtn">Browse Movies</a>
+    <div  class="dropdown-content" >
+      <a href="{{ url_for('movies_bp.movies_by_actor') }}">By Actor</a>
+      <a href="{{ url_for('movies_bp.movies_by_director') }}">By Director</a>
+      <a href="{{ url_for('movies_bp.movies_by_genre') }}">By Genre</a>
+      <a href="{{ url_for('movies_bp.movies_by_batch_number') }}">View All</a>
+    </div>
+  </li>
+
+    <ri class="dropdown" style="float:right;">
+    <a href="javascript:void(0)" class="dropbtn">Hi {{session['username']}}</a>
+    <div  class="dropdown-content" style="right:33px;">
+      <a href="{{ url_for('movies_bp.view_watchlist') }}">My Watchlist</a>
+      <a  href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+    </div>
+  </ri>
+
+    <li style="float:right;" class="search-container">
+    <form action="{{ url_for('movies_bp.search') }} ">
+      <input style="margin-top:4px;height:30px;" type="text" placeholder="Search.." name="search">
+
+      <select style="height:35px;" id="select" name="select">
+          <option value="All">All</option>
+          <option value="Actors">Actors</option>
+          <option value="Directors">Directors</option>
+          <option value="Genres">Genres</option>
+          <option value="Title">Title</option>
+        </select>
+      <button style="height:35px;" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</ul>
+
+{% else %}
+<ul>
+  <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Browse Movies</a>
+    <div class="dropdown-content">
+      <a href="{{ url_for('movies_bp.movies_by_actor') }}">By Actor</a>
+      <a href="{{ url_for('movies_bp.movies_by_director') }}">By Director</a>
+      <a href="{{ url_for('movies_bp.movies_by_genre') }}">By Genre</a>
+      <a href="{{ url_for('movies_bp.movies_by_batch_number') }}">View All</a>
+    </div>
+  </li>
+    <ri><a style="float:right" href="{{ url_for('authentication_bp.register') }}">Register</a></ri>
+    <ri><a style="float:right" href="{{ url_for('authentication_bp.login') }}">Login</a></ri>
+
+    <li style="float:right;" class="search-container">
+    <form action="{{ url_for('movies_bp.search') }} ">
+      <input style="margin-top:4px;height:30px;" type="text" placeholder="Search.." name="search">
+
+      <select style="height:35px;" id="select" name="select">
+          <option value="All">All</option>
+          <option value="Actors">Actors</option>
+          <option value="Directors">Directors</option>
+          <option value="Genres">Genres</option>
+          <option value="Title">Title</option>
+        </select>
+      <button style="height:35px;" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</ul>
+{% endif %}
+</body>
+<h1 style="text-align: center; color:red;font-size:32px">CS235FLIX</h1>
+</html>
